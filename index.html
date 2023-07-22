@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULADORA</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<div id="contenedor"> 
-    <div id="calculadora"> 
-        <div class="contenido">
-            <h1 >hidratacion basal</h1>
-            <p>ingrese todos los datos</p>
-            <input type="number" placeholder="Peso en kg">
-            <button>Calcular</button>
-            <p>70cc/hr</p>
-        </div>                  
-    </div>
-    <div id="detalle">
-        <div class="contenido">
-            <h1>como se calcula</h1>
-            <ul id="lista">
-                <li>DE 0KG, SE CALCULA 10CC POR CADA KILO</li>
-                <li>Se suman 50cc por cada kilo de pesi por arriba de 10kg. hasta 20kg</LI>
-                <li>de 20kg para arriba se suma por cada kilo adiccional</li>
-            </ul>
+
+<body>
+    <div id="contenedor">
+        <div id="calculadora">
+            <div class="contenido">
+                <h1>Hidratación de mantenimiento</h1>
+                <p>Ingrese el peso del niño en kg:</p>
+                <input type="number" id="peso" placeholder="Peso en kg">
+                <button onclick="calcularHidratacion()">Calcular</button>
+                <p>Resultado:</p>
+                <ul>
+                    <li>Método utilizado: <span id="metodo"></span></li>
+                    <li>Volumen diario en cc: <span id="volumenDiario"></span></li>
+                    <li>Mantenimiento en cc/hr: <span id="mantenimiento"></span></li>
+                    <li>Mantenimiento + mantenimiento/2: <span id="mantenimientoMedio"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div id="detalle">
+            <div class="contenido">
+                <h1>Cómo se calcula</h1>
+                <ul id="lista">
+                    <li>Para menores de 30kg se calcula por Holliday-Segar:</li>
+                    <ul>
+                        <li>Volumen diario en cc.</li>
+                        <li>Mantenimiento en cc/hr.</li>
+                        <li>Mantenimiento + mantenimiento/2.</li>
+                    </ul>
+                    <li>Para mayores de 30kg se calcula por SC:</li>
+                    <ul>
+                        <li>SC * 1500</li>
+                        <li>SC * 2000</li>
+                    </ul>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-     <body>
-        <html>
-     
+    <script src="./script.js"></script>
+</body>
+
+</html>
